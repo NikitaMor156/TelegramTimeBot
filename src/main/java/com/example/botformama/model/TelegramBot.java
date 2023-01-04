@@ -1,27 +1,24 @@
 package com.example.botformama.model;
 
-import com.example.botformama.model.EmojiContainer.*;
 import com.example.botformama.config.BotConfig;
+import com.example.botformama.container.EmojiContainer;
+import com.example.botformama.markup.CityReplyKeyboardMarkup;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 import static com.example.botformama.model.TimeManager.*;
 
 @Data
 @Component
+@EqualsAndHashCode(callSuper = false)
 public class TelegramBot extends TelegramLongPollingBot {
 
     private final BotConfig config;
@@ -32,6 +29,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     private final String canadaClient = "Oksana " + EmojiContainer.CA_FLAG;
     private final String northBey = "North Bay " + EmojiContainer.CA_FLAG;
     private final String eugene = "Eugene " + EmojiContainer.CA_FLAG;
+
 
     public TelegramBot(BotConfig config) {
         this.config = config;
@@ -74,7 +72,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         sendMessage.setChatId(chatId + "");
         sendMessage.setText(text);
 
-        sendMessage.setReplyMarkup(generateReplyKeyboardMarkup());
+        sendMessage.setReplyMarkup(new CityReplyKeyboardMarkup());
 
         try {
             execute(sendMessage);
@@ -83,27 +81,5 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
-    private ReplyKeyboardMarkup generateReplyKeyboardMarkup() {
-        ReplyKeyboardMarkup markup = new ReplyKeyboardMarkup();
-        List<KeyboardRow> rows = new ArrayList<>();
-
-        KeyboardRow row = new KeyboardRow();
-        row.add(kaiserslauternAndPrague);
-        row.add(canadaClient);
-        rows.add(row);
-
-        row = new KeyboardRow();
-        row.add(moscow);
-        row.add(kiev);
-        rows.add(row);
-
-        row = new KeyboardRow();
-        row.add(eugene);
-        row.add(northBey);
-        rows.add(row);
-
-        markup.setKeyboard(rows);
-        return markup;
-    }
 
 }

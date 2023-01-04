@@ -1,4 +1,4 @@
-package com.example.botformama.model;
+package com.example.botformama.container;
 
 import lombok.Data;
 
