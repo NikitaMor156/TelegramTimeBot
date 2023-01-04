@@ -1,31 +1,26 @@
 [
   {
-    "name": "Moscow",
+    "name": "Moscow\uD83C\uDDF7\uD83C\uDDFA",
     "timezone": "3"
   },
   {
-    "name": "Kiev",
+    "name": "Kiev\uD83C\uDDFA\uD83C\uDDE6",
     "timezone": "2"
   },
   {
-    "name": "Kaiserslautern / Prague",
+    "name": "Kaiserslautern\uD83C\uDDE9\uD83C\uDDEA / Prague\uD83C\uDDE8\uD83C\uDDFF",
     "timezone": "1"
   },
   {
-    "name": "Oksana",
+    "name": "Oksana\uD83C\uDDE8\uD83C\uDDE6",
     "timezone": "-7"
   },
   {
-    "name": "North Bey",
+    "name": "North Bey\uD83C\uDDE8\uD83C\uDDE6",
     "timezone": "-5"
   },
   {
-    "name": "Eugene",
+    "name": "Eugene\uD83C\uDDFA\uD83C\uDDF8",
     "timezone": "-8"
-  },
-  {
-    "name": "Astana",
-    "timezone": "6"
   }
-
 ]
