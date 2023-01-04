@@ -51,7 +51,8 @@ public class TelegramBot extends TelegramLongPollingBot {
                 sendMessage(chatId, getCityTime(cityManager.getCityByName(messageText)));
             } else {
                 switch (messageText) {
-                    case "/start" -> sendMessage(chatId, "AVE технологии, маманя!");
+                    case "/start" ->
+                            sendMessage(chatId, "Click on the city button and I will show you time!" + System.lineSeparator() + "Author -> @Nikita_Mor1");
                     default -> sendMessage(chatId, "Command not recognised");
                 }
             }
