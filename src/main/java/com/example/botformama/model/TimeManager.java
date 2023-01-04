@@ -23,7 +23,7 @@ public class TimeManager {
     }
 
     public static String getKaizerslauternAndPragueTime() {
-        return "Kaizerslautern/Prague time: " + FORMAT.format(new Date());
+        return "Kaiserslautern/Prague time: " + FORMAT.format(new Date());
     }
 
     public static String getCanadaClientTime() {
