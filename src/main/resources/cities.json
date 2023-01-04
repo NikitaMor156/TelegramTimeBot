@@ -22,5 +22,10 @@
   {
     "name": "Eugene",
     "timezone": "-8"
+  },
+  {
+    "name": "Astana",
+    "timezone": "6"
   }
+
 ]

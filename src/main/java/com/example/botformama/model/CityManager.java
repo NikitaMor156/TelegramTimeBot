@@ -33,4 +33,22 @@ public class CityManager {
         }
         return cityArrayList;
     }
+
+    public ArrayList<String> getAllCityNames(){
+        ArrayList<String> result = new ArrayList<>();
+        for (City c: cities){
+            result.add(c.getName());
+        }
+        return result;
+    }
+
+    public City getCityByName(String cityName){
+        for (City c: cities){
+            if (c.getName().equals(cityName)){
+                return c;
+            }
+        }
+        throw new NullPointerException("City was not found by name!");
+    }
+
 }

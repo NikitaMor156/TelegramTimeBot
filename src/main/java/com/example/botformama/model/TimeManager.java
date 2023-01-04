@@ -1,50 +1,26 @@
 package com.example.botformama.model;
 
+import com.example.botformama.entity.City;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
+import java.util.TimeZone;
 
 public class TimeManager {
 
-    private static final SimpleDateFormat FORMAT = new SimpleDateFormat("HH:mm");
+    private static final SimpleDateFormat FORMAT = generateFormat();
 
-    public static String getMoscowTime() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.HOUR_OF_DAY, 2);
-
-        return "Moscow time: " + FORMAT.format(calendar.getTime());
+    private static SimpleDateFormat generateFormat(){
+       SimpleDateFormat result = new SimpleDateFormat("HH:mm");
+       result.setTimeZone(TimeZone.getTimeZone("UTC"));
+       return result;
     }
 
-    public static String getKievTime() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.HOUR_OF_DAY, 1);
+    public static String getCityTime(City city){
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        calendar.add(Calendar.HOUR_OF_DAY, city.getTimezone());
 
-        return "Kiev time: " + FORMAT.format(calendar.getTime());
-    }
-
-    public static String getKaizerslauternAndPragueTime() {
-        return "Kaiserslautern/Prague time: " + FORMAT.format(new Date());
-    }
-
-    public static String getCanadaClientTime() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.HOUR_OF_DAY, -8);
-
-        return "Oksana's time in Canada: " + FORMAT.format(calendar.getTime());
-    }
-
-    public static String getNorthBeyTime() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.HOUR_OF_DAY, -6);
-
-        return "North Bey time: " + FORMAT.format(calendar.getTime());
-    }
-
-    public static String getEugeneTime() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.HOUR_OF_DAY, -9);
-
-        return "Eugene time: " + FORMAT.format(calendar.getTime());
+        return city.getName() + " time: " + FORMAT.format(calendar.getTime());
     }
 
 }
