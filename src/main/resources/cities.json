@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Moscow",
+    "timezone": "3"
+  },
+  {
+    "name": "Kiev",
+    "timezone": "2"
+  },
+  {
+    "name": "Kaiserslautern / Prague",
+    "timezone": "1"
+  },
+  {
+    "name": "Oksana",
+    "timezone": "-7"
+  },
+  {
+    "name": "North Bey",
+    "timezone": "-5"
+  },
+  {
+    "name": "Eugene",
+    "timezone": "-8"
+  }
+]
