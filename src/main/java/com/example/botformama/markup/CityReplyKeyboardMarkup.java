@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @Component
 @EqualsAndHashCode(callSuper = false)
-public class CityReplyKeyboardMarkup  extends ReplyKeyboardMarkup {
+public class CityReplyKeyboardMarkup extends ReplyKeyboardMarkup {
 
     private final int columnCount = 2;
 
@@ -27,17 +27,17 @@ public class CityReplyKeyboardMarkup  extends ReplyKeyboardMarkup {
         int counter = 0;
         KeyboardRow row = new KeyboardRow();
 
-        for (City c : cities){
+        for (City c : cities) {
             row.add(c.getName());
-            counter+=1;
+            counter += 1;
 
-            if (counter == columnCount){
+            if (counter == columnCount) {
                 rows.add(row);
                 row = new KeyboardRow();
                 counter = 0;
             }
         }
-        if (!row.isEmpty()){
+        if (!row.isEmpty()) {
             rows.add(row);
         }
         this.setKeyboard(rows);

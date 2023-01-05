@@ -23,28 +23,28 @@ public class CityManager {
         ArrayList<City> cityArrayList;
         try {
             //cities = mapper.readValue(jsonFile, new Typerefer);
-            cityList = Arrays.asList(mapper.readValue(jsonFile,City[].class));
+            cityList = Arrays.asList(mapper.readValue(jsonFile, City[].class));
             cityArrayList = new ArrayList<>(cityList);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        if (cityList.isEmpty()){
+        if (cityList.isEmpty()) {
             System.out.println("City list is empty!");
         }
         return cityArrayList;
     }
 
-    public ArrayList<String> getAllCityNames(){
+    public ArrayList<String> getAllCityNames() {
         ArrayList<String> result = new ArrayList<>();
-        for (City c: cities){
+        for (City c : cities) {
             result.add(c.getName());
         }
         return result;
     }
 
-    public City getCityByName(String cityName){
-        for (City c: cities){
-            if (c.getName().equals(cityName)){
+    public City getCityByName(String cityName) {
+        for (City c : cities) {
+            if (c.getName().equals(cityName)) {
                 return c;
             }
         }
